@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [PetTestCasesSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="PetTestCasesTest(failed)">
+    <classes>
+      <class name="com.restassuredheroapp.testscripts.PetTestCases">
+        <methods>
+          <include name="CreatePet"/>
+        </methods>
+      </class> <!-- com.restassuredheroapp.testscripts.PetTestCases -->
+    </classes>
+  </test> <!-- PetTestCasesTest(failed) -->
+</suite> <!-- Failed suite [PetTestCasesSuite] -->

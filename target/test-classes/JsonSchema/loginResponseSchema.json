@@ -1,0 +1,64 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1698318191.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"message",
+		"data",
+		"success"
+	],
+	"properties": {
+		"message": {
+			"$id": "#root/message", 
+			"title": "Message", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"OTP Generated Successfully"
+			],
+			"pattern": "^.*$"
+		},
+		"data": {
+			"$id": "#root/data", 
+			"title": "Data", 
+			"type": "object",
+			"required": [
+				"loginId",
+				"registeredUser"
+			],
+			"properties": {
+				"loginId": {
+					"$id": "#root/data/loginId", 
+					"title": "Loginid", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"7006523739"
+					],
+					"pattern": "^.*$"
+				},
+				"registeredUser": {
+					"$id": "#root/data/registeredUser", 
+					"title": "Registereduser", 
+					"type": "boolean",
+					"examples": [
+						true
+					],
+					"default": true
+				}
+			}
+		}
+,
+		"success": {
+			"$id": "#root/success", 
+			"title": "Success", 
+			"type": "boolean",
+			"examples": [
+				true
+			],
+			"default": true
+		}
+	}
+}

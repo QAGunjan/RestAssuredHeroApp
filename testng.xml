@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RestAssuredSuite">
+	<test thread-count="5" name="RestAssuredTest">
+		<classes>
+			<class name="com.restassuredheroapp.testscripts.TestRest">
+				<methods>
+					<include name="ValidateStatusCodeAndMessage"></include>
+					<include name="ValidateOTP"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- RestAssuredTest -->
+</suite> <!-- RestAssuredSuite -->
