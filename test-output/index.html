@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-StoreSuite" class="navigator-link">
-              <span class="suite-name border-failed">StoreSuite</span>
+              <span class="suite-name border-passed">StoreSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-StoreSuite" class="navigator-link ">
-                    <span>D:\My\RestAssuredHeroApp\StoreOrder.xml</span>
+                    <span>D:\RestAssured\RestAssuredHeroApp\StoreOrder.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-StoreSuite" class="hide-methods failed suite-StoreSuite"> (hide)</a> <!-- hide-methods failed suite-StoreSuite -->
-                      <a href="#" panel-name="suite-StoreSuite" class="show-methods failed suite-StoreSuite"> (show)</a> <!-- show-methods failed suite-StoreSuite -->
-                    </span>
-                    <div class="method-list-content failed suite-StoreSuite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-StoreSuite" title="com.restassuredheroapp.testscripts.StoreTestCases" class="method navigator-link" hash-for-method="GetOrder">GetOrder</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-StoreSuite -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -119,6 +105,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-StoreSuite" title="com.restassuredheroapp.testscripts.StoreTestCases" class="method navigator-link" hash-for-method="CreateOrder">CreateOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-StoreSuite" title="com.restassuredheroapp.testscripts.StoreTestCases" class="method navigator-link" hash-for-method="DeleteOrder">DeleteOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-StoreSuite" title="com.restassuredheroapp.testscripts.StoreTestCases" class="method navigator-link" hash-for-method="GetOrder">GetOrder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-StoreSuite -->
@@ -133,26 +129,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-StoreSuite" class="panel StoreSuite">
-          <div class="suite-StoreSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.restassuredheroapp.testscripts.StoreTestCases</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="GetOrder">
-                  </a> <!-- GetOrder -->
-                  <span class="method-name">GetOrder</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [111] but found [20886]
-	at com.restassuredheroapp.testscripts.StoreTestCases.GetOrder(StoreTestCases.java:53)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 33 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-StoreSuite-class-failed -->
           <div class="suite-StoreSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -166,12 +142,26 @@
                   <span class="method-name">CreateOrder</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="DeleteOrder">
+                  </a> <!-- DeleteOrder -->
+                  <span class="method-name">DeleteOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="GetOrder">
+                  </a> <!-- GetOrder -->
+                  <span class="method-name">GetOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-StoreSuite-class-passed -->
         </div> <!-- panel StoreSuite -->
         <div panel-name="test-xml-StoreSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\My\RestAssuredHeroApp\StoreOrder.xml</span>
+            <span class="header-content">D:\RestAssured\RestAssuredHeroApp\StoreOrder.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -220,20 +210,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'CreateOrder')
 data.setCell(0, 2, 'com.restassuredheroapp.testscripts.StoreTestCases')
-data.setCell(0, 3, 11533);
+data.setCell(0, 3, 10720);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'GetOrder')
+data.setCell(1, 1, 'DeleteOrder')
 data.setCell(1, 2, 'com.restassuredheroapp.testscripts.StoreTestCases')
-data.setCell(1, 3, 2295);
+data.setCell(1, 3, 2289);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'GetOrder')
+data.setCell(2, 2, 'com.restassuredheroapp.testscripts.StoreTestCases')
+data.setCell(2, 3, 1642);
 window.suiteTableData['StoreSuite']= { tableData: data, tableDiv: 'times-div-StoreSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-StoreSuite">
               </div> <!-- times-div-StoreSuite -->
             </div> <!-- times-div -->
@@ -265,10 +259,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">GetOrder</span>
-                <span class="method-start">11728 ms</span>
+                <span class="method-start">10892 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">DeleteOrder</span>
+                <span class="method-start">12553 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

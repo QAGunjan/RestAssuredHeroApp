@@ -5,6 +5,7 @@ import static io.restassured.RestAssured.given;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.restassuredheroapp.pojos.DeleteOrder;
 import com.restassuredheroapp.pojos.OrderStore;
 import com.restassuredheroapp.utils.FakerData;
 import com.restassuredheroapp.utils.SpecificationBuilder;
@@ -50,24 +51,31 @@ public class StoreTestCases {
 		Assert.assertEquals(response.statusCode(), 200);
 		Assert.assertTrue(response.statusLine().contains("OK"));
 		Assert.assertTrue(response.getHeader("Content-Type").equals("application/json"));
-		Assert.assertEquals(OrderStore.responseOrderStore.getId(), 111);
+		Assert.assertEquals(OrderStore.responseOrderStore.getId(), OrderStore.requestOrderStore.getId());
 
 	}
 	
-//	@Test(dependsOnMethods = "GetOrder")
-//	public void DeleteOrder() {
-//
+	@Test(dependsOnMethods = "GetOrder")
+	public void DeleteOrder() {
+
 //		OrderStore serialized = new OrderStore(14859, 0, 0, "2023-12-22T12:08:21.618+0000", "placed", true);
-//
-//		Response response = given().spec(SpecificationBuilder.GetRequestSpec()).queryParam("api_key", "special-key")
-//				.body(serialized).when().post("/store/order").then().spec(SpecificationBuilder.GetResponseSpec())
-//				.extract().response();
-//
-//		Assert.assertEquals(response.statusCode(), 200);
-//		Assert.assertTrue(response.statusLine().contains("OK"));
-//		Assert.assertTrue(response.getHeader("Content-Type").equals("application/json"));
-//
-//	}
+
+		Response response = given().spec(SpecificationBuilder.GetRequestSpec()).queryParam("api_key", "special-key")
+				.when().delete("/store/order" + "/" + OrderStore.responseOrderStore.getId()).then().spec(SpecificationBuilder.GetResponseSpec())
+				.extract().response();
+
+		DeleteOrder.SetUp(response);
+		
+		Assert.assertEquals(response.statusCode(), 200);
+		Assert.assertTrue(response.statusLine().contains("OK"));
+		Assert.assertTrue(response.getHeader("Content-Type").equals("application/json"));
+		Assert.assertEquals(DeleteOrder.responseDeleteStore.getCode(), 200);
+		Assert.assertEquals(DeleteOrder.responseDeleteStore.getType(), "unknown");
+		int orderID = OrderStore.responseOrderStore.getId();
+		String orderIDAsString = Integer.toString(orderID);
+		Assert.assertEquals(DeleteOrder.responseDeleteStore.getMessage(), orderIDAsString);
+
+	}
 
 
 }

@@ -6,6 +6,7 @@
       <class name="com.restassuredheroapp.testscripts.StoreTestCases">
         <methods>
           <include name="CreateOrder"/>
+          <include name="DeleteOrder"/>
           <include name="GetOrder"/>
         </methods>
       </class> <!-- com.restassuredheroapp.testscripts.StoreTestCases -->
